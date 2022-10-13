@@ -1,0 +1,46 @@
+package com.user.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.user.model.Users;
+import com.user.repository.UserRepository;
+
+@Service
+public class Servie {
+	
+	
+	@Autowired
+	UserRepository userRepo;
+	
+	public Users storeParticipants(Users user) {
+
+		Optional<Users> op = userRepo.findById(user.getId());
+		if (op.isEmpty()) {
+		return  userRepo.save(user);	
+	}
+		return null;
+}
+	
+//	public ResponseEntity<?> loginParticipants(Users user) {
+//		Users users = userRepo.findByMoible_number(user.getMobile_number());
+//		if(users.getPassword().equals(user.getPassword())) {
+//			return ResponseEntity.ok(users);}
+//		return (ResponseEntity<?>) ResponseEntity.internalServerError();
+//		}
+
+//	public ResponseEntity<?> loginParticipants(Users user) {
+//		Users users = userRepo.findByMoible_number(user.getMobile_number());
+//		if(users.getPassword().equals(user.getPassword())) {
+//			return ResponseEntity.ok(users);}
+//		return (ResponseEntity<?>) ResponseEntity.internalServerError();
+//		
+//		
+//	}
+		
+	}
+	
+

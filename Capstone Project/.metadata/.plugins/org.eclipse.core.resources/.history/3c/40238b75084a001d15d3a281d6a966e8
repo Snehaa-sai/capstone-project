@@ -1,0 +1,60 @@
+package com.example.user.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name="User")
+public class Users {
+
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int Id;
+		
+		private String email;
+		
+		private String Mobile_number;
+		
+		private String Password;
+		
+		
+		public int getApplication_id() {
+			return Id;
+		}
+		public void setApplication_id(int Id) {
+			Id = Id;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		public String getMobile_number() {
+			return Mobile_number;
+		}
+		public void setMobile_number(String mobile_number) {
+			Mobile_number = mobile_number;
+		}
+		public String getPassword() {
+			return Password;
+		}
+		public void setPassword(String password) {
+			Password = password;
+		}
+		@Override
+		public String toString() {
+			return "Users [Id=" + Id + ", email=" + email + ", Mobile_number=" + Mobile_number
+					+ ", Password=" + Password + "]";
+		}
+			
+	}
+	
+
+
+

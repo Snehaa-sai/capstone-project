@@ -1,0 +1,46 @@
+package com.user.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.user.model.AdharCard;
+import com.user.model.Users;
+import com.user.repository.UserRepository;
+import com.user.repository.adharRepository;
+
+@Service
+public class Servie {
+	
+	
+	@Autowired
+	UserRepository userRepo;
+	
+	@Autowired
+	adharRepository adharRepo;
+	
+	public Users storeParticipants(Users user) {
+
+		Optional<Users> op = userRepo.findById(user.getId());
+		if (op.isEmpty()) {
+		return  userRepo.save(user);	
+	}
+		return null;
+}
+	
+	public AdharCard apply(AdharCard adhar) {
+		
+		Optional<AdharCard> op = ((adharRepository) adharRepo).findByMobileNumber(adhar.getMobileNumber());
+		if(op.isEmpty()) {
+			adharRepo.save(adhar);
+		}
+		
+		return null;
+	}
+	
+
+		
+	}
+	
+

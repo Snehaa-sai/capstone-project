@@ -1,0 +1,24 @@
+package com.admin.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.admin.Repository.adminRepository;
+import com.admin.model.admin;
+
+@Service
+public class service {
+
+	@Autowired
+	adminRepository adminRepo;
+	
+	public admin storeParticipants(admin user) {
+
+		Optional<admin> op = adminRepo.findById(user.getId());
+		if (op.isEmpty()) {
+		return  adminRepo.save(user);	
+	}
+		return null;
+}
+}

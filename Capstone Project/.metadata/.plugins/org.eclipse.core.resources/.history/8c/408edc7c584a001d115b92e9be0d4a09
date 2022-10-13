@@ -1,0 +1,116 @@
+package com.user.model;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="AdharCard_Details")
+public class AdharCard {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int Id;
+	
+	private String name;
+	
+	private Date Dob;
+	
+	private String Address;
+	
+	private String email;
+	
+	private String mobileNumber;
+	
+	private String gender;
+	
+	private String AdharCardId;
+	
+	private Date IssueDate;
+
+	public int geId() {
+		return Id;
+	}
+
+	public void setId(int Id) {
+		Id = Id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getDob() {
+		return Dob;
+	}
+
+	public void setDob(Date dob) {
+		Dob = dob;
+	}
+
+	public String getAddress() {
+		return Address;
+	}
+
+	public void setAddress(String address) {
+		Address = address;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		mobileNumber = mobileNumber;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getAdharCardId() {
+		return AdharCardId;
+	}
+
+	public void setAdharCard_Id(String adharCardId) {
+		AdharCardId = adharCardId;
+	}
+
+	public Date getIssueDate() {
+		return IssueDate;
+	}
+
+	public void setIssueDate(Date issueDate) {
+		IssueDate = issueDate;
+	}
+
+	@Override
+	public String toString() {
+		return "AdharCard [Id=" + Id + ", name=" + name + ", Dob=" + Dob + ", Address="
+				+ Address + ", email=" + email + ", mobileNumber=" + mobileNumber + ", gender=" + gender
+				+ ", AdharCardId=" + AdharCardId + ", IssueDate=" + IssueDate + "]";
+	}
+	
+	
+	
+}

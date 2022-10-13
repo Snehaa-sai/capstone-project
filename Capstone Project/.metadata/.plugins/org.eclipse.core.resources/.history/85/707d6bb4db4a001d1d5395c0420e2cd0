@@ -1,0 +1,20 @@
+package com.admin.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.admin.Repository.adminRepository;
+import com.admin.model.admin;
+
+public class MainController {
+
+	@Autowired
+	adminRepository adminRepo;
+	
+	@GetMapping(value = "/admin/login")
+	public List<admin> checkDupicate() {
+		return adminRepo.findAll();
+	}
+}
